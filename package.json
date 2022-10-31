@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "build": "nyc --reporter=cobertura --reporter=html ./node_modules/.bin/mocha test/**/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml"
   },
   "author": "Prashant",
   "license": "ISC",
@@ -12,6 +13,8 @@
     "chai": "^4.3.6",
     "express": "^4.18.2",
     "mocha": "^10.1.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "nyc": "^15.0.2",
+    "mocha-junit-reporter": "^1.12.0",
   }
 }
